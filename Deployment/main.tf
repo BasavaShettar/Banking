@@ -27,9 +27,9 @@ resource "aws_instance" "web-server" {
   
   provisioner "local-exec" {
         command = " echo ${aws_instance.web-server.public_ip} > inventory "
-        command = " touch Hello"
+        
   }
   # provisioner "local-exec" {
   #command = "ansible-playbook /var/lib/jenkins/workspace/Banking/my-serverfiles/finance-playbook.yml "
-  } 
+  #} 
 }
