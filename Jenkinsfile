@@ -22,10 +22,7 @@ pipeline{
     {
       steps{
 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Banking/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
-      steps
-        {
-          sh 'chmod 777 /var/run/docker.sock'
-        }
+      
       }
     }
       
