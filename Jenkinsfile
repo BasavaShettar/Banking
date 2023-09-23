@@ -55,7 +55,7 @@ ansiblePlaybook credentialsId: 'Ansible_Server', disableHostKeyChecking: true, i
                 sh 'terraform init'
                 sh 'terraform validate'
                 sh 'terraform apply --auto-approve'
-                
+            }
     }
 }
   }
