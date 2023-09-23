@@ -1,17 +1,19 @@
 provider "aws" {
 region = "us-east-1" 
+access_key = "AKIASE2HBXOGUPDD5CO7"
+secret_key = "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"
 }
 
 resource "aws_instance" "web-server" {
   ami           = "ami-053b0d53c279acc90" 
   instance_type = "t2.micro" 
-  key_name = "NewKey"
+  key_name = "new"
   vpc_security_group_ids= ["sg-030721246fc4012b2"]
  
  connection {
     type     = "ssh"
     user     = "ubuntu"
-    private_key = file("./NewKey.pem")
+    private_key = file("./new.pem")
     host     = self.public_ip
   }
   
