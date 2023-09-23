@@ -50,7 +50,7 @@ ansiblePlaybook credentialsId: 'Ansible_Server', disableHostKeyChecking: true, i
     stage ('Configure Test-server with Terraform, Ansible and then Deploying'){
             steps {
                 
-                sh 'sudo chmod 600 NewKey.pem'
+                sh 'sudo chmod 600 NewKey.pem -S '
                 sh 'sudo apt-get install terraform'
                 sh 'terraform init'
                 sh 'terraform validate'
