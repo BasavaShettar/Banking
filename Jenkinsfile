@@ -25,7 +25,7 @@ publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, 
       
       }
     }
-      
+   /*   
     stage('DOCKER BUILD')
           {
             steps{
@@ -40,7 +40,7 @@ stage('DOCKER PUSH') {
       sh 'docker push basavarajshettar/banking-app:1.0'   
             }
         }
-    /*
+   
     stage('DEPLOY ON SERVERR'){
   steps{
 ansiblePlaybook credentialsId: 'Ansible_Server', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'Dev.inv', playbook: 'ansible-playbook.yml'
