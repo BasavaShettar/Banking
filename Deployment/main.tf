@@ -1,7 +1,5 @@
 provider "aws" {
 region = "us-east-1" 
-access_key = "AKIASE2HBXOGUPDD5CO7"
-secret_key = "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"
 }
 
 resource "aws_instance" "web-server" {
@@ -29,7 +27,7 @@ resource "aws_instance" "web-server" {
         command = " echo ${aws_instance.web-server.public_ip} > inventory "
         
   }
-  # provisioner "local-exec" {
-  #command = "ansible-playbook /var/lib/jenkins/workspace/Banking/my-serverfiles/finance-playbook.yml "
-  #} 
+   provisioner "local-exec" {
+  command = "ansible-playbook /var/lib/jenkins/workspace/Banking/Deployment/ansible-playbook.yml "
+  } 
 }
