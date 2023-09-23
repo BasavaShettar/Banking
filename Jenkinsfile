@@ -49,8 +49,6 @@ ansiblePlaybook credentialsId: 'Ansible_Server', disableHostKeyChecking: true, i
  */   
     stage ('Configure Test-server with Terraform, Ansible and then Deploying'){
             steps {
-                
-
                 sh 'sudo apt-get install terraform'
                 sh 'terraform init'
                 sh 'terraform validate'
