@@ -51,6 +51,7 @@ ansiblePlaybook credentialsId: 'Ansible_Server', disableHostKeyChecking: true, i
             steps {
                 dir('Deployment') {
                 sh 'sudo chmod 600 new.pem'
+                sh 'sudo apt update'
                 sh 'sudo apt-get install terraform'
                 sh 'terraform init'
                 sh 'terraform validate'
