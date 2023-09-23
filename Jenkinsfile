@@ -22,6 +22,7 @@ pipeline{
     {
       steps{
 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Banking/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+      sh 'chmod 777 /var/run/docker.sock'
       }
     }
       
@@ -46,5 +47,14 @@ ansiblePlaybook credentialsId: 'Ansible_Server', disableHostKeyChecking: true, i
   } 
 }
  */   
+    stage ('Configure Test-server with Terraform, Ansible and then Deploying'){
+            steps {
+                
+                sh 'sudo chmod 600 NewKey.pem'
+                sh 'sudo apt-get install terraform'
+                sh 'terraform init'
+                sh 'terraform validate'
+                sh 'terraform apply --auto-approve'
+                
     }
 }
