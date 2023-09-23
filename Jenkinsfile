@@ -55,10 +55,10 @@ ansiblePlaybook credentialsId: 'Ansible_Server', disableHostKeyChecking: true, i
                  sh 'sudo apt-get install terraform' */
                 sh 'wget https://releases.hashicorp.com/terraform/1.5.7/terraform_1.5.7_linux_386.zip'
                 sh 'sudo apt install unzip'
-                /* sh 'sudo unzip terraform_1.5.7_linux_386.zip y ' */
+                /* sh 'sudo unzip terraform_1.5.7_linux_386.zip y ' 
                 sh 'curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" '
                 sh 'unzip awscliv2.zip'
-                sh 'sudo ./aws/install'
+                sh 'sudo ./aws/install' */
                 sh 'terraform init'
                 sh 'terraform validate'
                 sh 'terraform apply --auto-approve'
