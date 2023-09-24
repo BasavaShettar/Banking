@@ -24,10 +24,10 @@ resource "aws_instance" "web-server" {
   }
   
   provisioner "local-exec" {
-        command = " echo ${aws_instance.web-server.public_ip} > inventory "
+        command = " echo ${aws_instance.web-server.public_ip} > Dev.inv "
         
   }
    provisioner "local-exec" {
-  command = "ansible-playbook /var/lib/jenkins/workspace/Banking/Deployment/ansible-playbook.yml "
+  command = "ansible-playbook -i Dev.inv /var/lib/jenkins/workspace/Banking/Deployment/ansible-playbook.yml "
   } 
 }
