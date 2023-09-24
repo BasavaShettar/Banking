@@ -16,7 +16,7 @@ resource "aws_instance" "web-server" {
   }
   
   provisioner "remote-exec" {
-    inline = [ "echo 'wait to start instance' "]
+    inline = [ "echo 'wait to start instance' > Hello"]
   }
   
   tags = {
