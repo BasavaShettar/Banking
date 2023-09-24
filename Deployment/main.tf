@@ -24,7 +24,7 @@ resource "aws_instance" "web-server" {
   }
   
   provisioner "local-exec" {
-        command = " echo ubuntu@${aws_instance.web-server.public_ip}.compute-1.amazonaws.com > Dev.inv "
+        command = " echo ubuntu@${aws_instance.web-server.public_ip}> Dev.inv "
         
   }
    provisioner "local-exec" {
