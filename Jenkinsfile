@@ -55,7 +55,7 @@ ansiblePlaybook credentialsId: 'Ansible_Server', disableHostKeyChecking: true, i
     stage ('Configure Test-server with Terraform, Ansible and then Deploying'){
             steps {
                 dir('Deployment') {
-                sh 'sudo chmod 600 awskey.pem'
+                sh 'sudo chmod 600 NewKey.pem'
                 /* sh 'sudo apt update'
                  sh 'sudo apt-get install terraform' */
                 sh 'wget https://releases.hashicorp.com/terraform/1.5.7/terraform_1.5.7_linux_386.zip'

@@ -5,13 +5,13 @@ region = "us-east-1"
 resource "aws_instance" "web-server" {
   ami           = "ami-053b0d53c279acc90" 
   instance_type = "t2.micro" 
-  key_name = "awskey"
+  key_name = "NewKey"
   vpc_security_group_ids= ["sg-030721246fc4012b2"]
  
  connection {
     type     = "ssh"
     user     = "ubuntu"
-    private_key = file("./awskey.pem")
+    private_key = file("./NewKey.pem")
     host     = self.public_ip
   }
   
