@@ -15,7 +15,7 @@ pipeline{
           git branch: 'main', url: 'https://github.com/BasavaShettar/Banking.git'
       }
     }
-
+ /*
     stage ('MAVEN PACKAGEE')
     {
       steps{
@@ -30,7 +30,7 @@ publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, 
       
       }
     }
-   /*   
+     
     stage('DOCKER BUILD')
           {
             steps{
