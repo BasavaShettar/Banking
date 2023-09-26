@@ -15,7 +15,7 @@ pipeline{
           git branch: 'main', url: 'https://github.com/BasavaShettar/Banking.git'
       }
     }
- /*
+
     stage ('MAVEN PACKAGEE')
     {
       steps{
@@ -46,12 +46,7 @@ stage('DOCKER PUSH') {
             }
         }
    
-    stage('DEPLOY ON SERVERR'){
-  steps{
-ansiblePlaybook credentialsId: 'Ansible_Server', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'Dev.inv', playbook: 'ansible-playbook.yml'
-  } 
-}
- */   
+      
     stage ('Configure Test-server with Terraform, Ansible and then Deploying'){
             steps {
                 dir('Deployment') {
